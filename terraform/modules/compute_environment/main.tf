@@ -52,6 +52,7 @@ resource "aws_batch_compute_environment" "default" {
   compute_resources {
 
     bid_percentage = var.bid_percentage
+    allocation_strategy = "BEST_FIT_PROGRESSIVE"
     ec2_key_pair   = var.key_pair
 
     instance_role       = aws_iam_instance_profile.ecs_instance_role.arn
